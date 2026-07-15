@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>V&amp;I Launchpad — Deloitte Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..800;1,14..32,300..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ── Sidebar ──────────────────────────────────────────── -->
+<aside class="sidebar">
+
+  <a href="#" class="sidebar-logo">
+    <div class="logo-mark">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <circle cx="8" cy="8" r="6" stroke="#86BC25" stroke-width="1.5"/>
+        <circle cx="8" cy="8" r="2.5" fill="#86BC25"/>
+      </svg>
+    </div>
+    <div class="logo-label">
+      <strong>V&amp;I Launchpad</strong>
+      <span>Deloitte Digital</span>
+    </div>
+  </a>
+
+  <nav>
+    <div class="nav-group">
+      <span class="nav-label">Tools</span>
+
+      <button class="nav-item active" data-filter="all">
+        <span class="nav-icon">⊞</span>
+        <span>All tools</span>
+      </button>
+
+      <button class="nav-item" data-filter="time">
+        <span class="nav-icon">⏱</span>
+        <span>Time &amp; Scheduling</span>
+      </button>
+
+      <button class="nav-item" data-filter="people">
+        <span class="nav-icon">👤</span>
+        <span>People &amp; HR</span>
+      </button>
+
+      <button class="nav-item" data-filter="finance">
+        <span class="nav-icon">💳</span>
+        <span>Finance</span>
+      </button>
+
+      <button class="nav-item" data-filter="learning">
+        <span class="nav-icon">📚</span>
+        <span>Learning</span>
+      </button>
+
+      <button class="nav-item" data-filter="projects">
+        <span class="nav-icon">🗂</span>
+        <span>Projects &amp; Work</span>
+      </button>
+
+      <button class="nav-item" data-filter="it">
+        <span class="nav-icon">💻</span>
+        <span>IT &amp; Support</span>
+      </button>
+
+      <button class="nav-item" data-filter="comms">
+        <span class="nav-icon">💬</span>
+        <span>Communications</span>
+      </button>
+
+    </div>
+  </nav>
+
+  <div class="nav-divider"></div>
+
+  <div class="sidebar-onboarding">
+    <button class="onboard-btn" id="onboarding-trigger">
+      <span class="ob-icon">👋</span>
+      <span class="ob-label">New here?</span>
+    </button>
+  </div>
+
+</aside>
+
+
+<!-- ── Main wrapper ─────────────────────────────────────── -->
+<div class="main-wrap">
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="search-wrap">
+      <span class="search-icon">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </span>
+      <input id="search" type="search" placeholder="Search tools…" autocomplete="off" />
+    </div>
+    <div class="topbar-right">
+      <span class="topbar-pill" id="js-date"></span>
+    </div>
+  </header>
+
+
+  <!-- Content -->
+  <main class="content">
+
+    <div class="page-heading">
+      <h1>Good morning — what do you need?</h1>
+      <p>Every Deloitte tool, one place. No more hunting for links.</p>
+    </div>
+
+    <!-- Attention alerts — injected by JS -->
+    <section id="alerts-section"></section>
+
+    <!-- Quick Actions -->
+    <section id="quick-actions">
+      <div class="section-label">Quick actions</div>
+      <div class="quick-grid">
+
+        <a class="quick-card" href="#" target="_blank" rel="noopener">
+          <div class="qc-icon">⏱️</div>
+          <div class="qc-label">Log Time</div>
+          <div class="qc-sub">Timesheets</div>
+        </a>
+
+        <a class="quick-card" href="#" target="_blank" rel="noopener">
+          <div class="qc-icon">🧾</div>
+          <div class="qc-label">Submit Expense</div>
+          <div class="qc-sub">Concur</div>
+        </a>
+
+        <a class="quick-card" href="#" target="_blank" rel="noopener">
+          <div class="qc-icon">🌴</div>
+          <div class="qc-label">Apply for Leave</div>
+          <div class="qc-sub">Cirrus</div>
+        </a>
+
+        <a class="quick-card" href="#" target="_blank" rel="noopener">
+          <div class="qc-icon">📋</div>
+          <div class="qc-label">Complete Training</div>
+          <div class="qc-sub">MyQ&amp;R</div>
+        </a>
+
+        <a class="quick-card" href="#" target="_blank" rel="noopener">
+          <div class="qc-icon">📅</div>
+          <div class="qc-label">Check Projects</div>
+          <div class="qc-sub">Float</div>
+        </a>
+
+        <a class="quick-card" href="#" target="_blank" rel="noopener">
+          <div class="qc-icon">🆘</div>
+          <div class="qc-label">Raise IT Ticket</div>
+          <div class="qc-sub">Service Desk</div>
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- Tool directory -->
+    <section id="tool-directory">
+
+      <!-- Time & Scheduling -->
+      <div class="category" data-category="time">
+        <div class="category-heading">⏱ Time &amp; Scheduling</div>
+        <div class="tool-grid">
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-green">⏱️</div>
+            <div class="tc-body">
+              <div class="tc-name">Timesheets</div>
+              <div class="tc-desc">Log hours against projects daily</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-blue">🌊</div>
+            <div class="tc-body">
+              <div class="tc-name">Float</div>
+              <div class="tc-desc">V&amp;I project resource planning</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-teal">🧑‍💼</div>
+            <div class="tc-body">
+              <div class="tc-name">Staffit</div>
+              <div class="tc-desc">Firm-wide resourcing &amp; project staffing</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- People & HR -->
+      <div class="category" data-category="people">
+        <div class="category-heading">👤 People &amp; HR</div>
+        <div class="tool-grid">
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-purple">☁️</div>
+            <div class="tc-body">
+              <div class="tc-name">Cirrus</div>
+              <div class="tc-desc">Leave, payroll &amp; employee self-service</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-blue">📁</div>
+            <div class="tc-body">
+              <div class="tc-name">My Profile</div>
+              <div class="tc-desc">Update bio, skills &amp; org details</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-orange">🤝</div>
+            <div class="tc-body">
+              <div class="tc-name">People Finder</div>
+              <div class="tc-desc">Search for colleagues across the firm</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-green">📈</div>
+            <div class="tc-body">
+              <div class="tc-name">Performance Portal</div>
+              <div class="tc-desc">Goals, reviews &amp; feedback</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Finance -->
+      <div class="category" data-category="finance">
+        <div class="category-heading">💳 Finance &amp; Expenses</div>
+        <div class="tool-grid">
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-orange">🧾</div>
+            <div class="tc-body">
+              <div class="tc-name">Concur</div>
+              <div class="tc-desc">Submit &amp; approve expense claims</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-yellow">💳</div>
+            <div class="tc-body">
+              <div class="tc-name">Corporate Card</div>
+              <div class="tc-desc">Manage your Deloitte Amex card</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-green">💰</div>
+            <div class="tc-body">
+              <div class="tc-name">Payslips</div>
+              <div class="tc-desc">View pay history via Cirrus</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Learning & Compliance -->
+      <div class="category" data-category="learning">
+        <div class="category-heading">📚 Learning &amp; Compliance</div>
+        <div class="tool-grid">
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-red">📋</div>
+            <div class="tc-body">
+              <div class="tc-name">MyQ&amp;R</div>
+              <div class="tc-desc">Mandatory compliance training</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-blue">🎓</div>
+            <div class="tc-body">
+              <div class="tc-name">LinkedIn Learning</div>
+              <div class="tc-desc">Self-directed learning &amp; courses</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-purple">🌐</div>
+            <div class="tc-body">
+              <div class="tc-name">Deloitte University</div>
+              <div class="tc-desc">Internal learning programs &amp; events</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-teal">🔒</div>
+            <div class="tc-body">
+              <div class="tc-name">Independence Check</div>
+              <div class="tc-desc">Declare financial interests &amp; conflicts</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Projects & Work -->
+      <div class="category" data-category="projects">
+        <div class="category-heading">🗂 Projects &amp; Work</div>
+        <div class="tool-grid">
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-blue">📐</div>
+            <div class="tc-body">
+              <div class="tc-name">Figma</div>
+              <div class="tc-desc">Design &amp; prototype (team workspace)</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-green">📄</div>
+            <div class="tc-body">
+              <div class="tc-name">SharePoint</div>
+              <div class="tc-desc">V&amp;I team files &amp; document library</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-purple">📝</div>
+            <div class="tc-body">
+              <div class="tc-name">Project Tracker</div>
+              <div class="tc-desc">Active project status &amp; milestones</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-teal">🌐</div>
+            <div class="tc-body">
+              <div class="tc-name">DNet</div>
+              <div class="tc-desc">Deloitte intranet &amp; knowledge base</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-orange">🔍</div>
+            <div class="tc-body">
+              <div class="tc-name">Proposals &amp; Pursuits</div>
+              <div class="tc-desc">Bid management &amp; client proposals</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- IT & Support -->
+      <div class="category" data-category="it">
+        <div class="category-heading">💻 IT &amp; Support</div>
+        <div class="tool-grid">
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-red">🆘</div>
+            <div class="tc-body">
+              <div class="tc-name">Service Desk</div>
+              <div class="tc-desc">Raise IT tickets &amp; track requests</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-gray">🛒</div>
+            <div class="tc-body">
+              <div class="tc-name">Software Requests</div>
+              <div class="tc-desc">Request tools, licences &amp; hardware</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-blue">🔑</div>
+            <div class="tc-body">
+              <div class="tc-name">Password Reset</div>
+              <div class="tc-desc">Reset Deloitte account credentials</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-green">📱</div>
+            <div class="tc-body">
+              <div class="tc-name">VPN &amp; Remote Access</div>
+              <div class="tc-desc">Set up secure remote access</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Communications -->
+      <div class="category" data-category="comms">
+        <div class="category-heading">💬 Communications</div>
+        <div class="tool-grid">
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-blue">📧</div>
+            <div class="tc-body">
+              <div class="tc-name">Outlook</div>
+              <div class="tc-desc">Email &amp; calendar</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-purple">💬</div>
+            <div class="tc-body">
+              <div class="tc-name">Microsoft Teams</div>
+              <div class="tc-desc">Chat, calls &amp; team channels</div>
+            </div>
+          </a>
+
+          <a class="tool-card" href="#" target="_blank" rel="noopener">
+            <div class="tc-icon ic-indigo">🤝</div>
+            <div class="tc-body">
+              <div class="tc-name">Viva Engage</div>
+              <div class="tc-desc">Firm-wide social &amp; announcements</div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+    </section><!-- /tool-directory -->
+
+    <!-- No results -->
+    <div id="no-results">
+      <p>No tools match "<strong id="no-results-term"></strong>"</p>
+      <p style="margin-top:.4rem;font-size:.8rem;">Try a different keyword, or browse a category from the sidebar.</p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left"><strong>V&amp;I Launchpad</strong> · Last updated May 2026</div>
+    <div class="footer-right">
+      <a href="mailto:?subject=V%26I+Launchpad+feedback">Suggest a link</a>
+      <a href="mailto:?subject=Broken+link+report">Report broken link</a>
+      <span style="font-size:.72rem;color:var(--text-3)">Not an official Deloitte product</span>
+    </div>
+  </footer>
+
+</div><!-- /main-wrap -->
+
+
+<!-- Onboarding modal -->
+<div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <div class="modal-header">
+      <div>
+        <h3 id="modal-title">👋 New here?</h3>
+        <p>Your first-week checklist — complete these in order.</p>
+      </div>
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+    </div>
+    <ol class="checklist">
+      <li>
+        <span class="step-num">1</span>
+        <div class="step-text">
+          <strong>Set up Cirrus</strong> — confirm bank details, check leave balance, download the app.
+          <a href="#" target="_blank" rel="noopener">Open Cirrus →</a>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">2</span>
+        <div class="step-text">
+          <strong>Complete mandatory MyQ&amp;R modules</strong> — due within your first 30 days.
+          <a href="#" target="_blank" rel="noopener">Open MyQ&amp;R →</a>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">3</span>
+        <div class="step-text">
+          <strong>Submit your first timesheet</strong> — log hours by end of week. Ask your manager for project codes.
+          <a href="#" target="_blank" rel="noopener">Open Timesheets →</a>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">4</span>
+        <div class="step-text">
+          <strong>Check Float</strong> — see which projects you're rostered on and who your teammates are.
+          <a href="#" target="_blank" rel="noopener">Open Float →</a>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">5</span>
+        <div class="step-text">
+          <strong>Complete your Independence declaration</strong> — required within your first two weeks.
+          <a href="#" target="_blank" rel="noopener">Open Independence Check →</a>
+        </div>
+      </li>
+      <li>
+        <span class="step-num">6</span>
+        <div class="step-text">
+          <strong>Join the V&amp;I Teams channel</strong> — announcements, retros, and social stuff.
+          <a href="#" target="_blank" rel="noopener">Open Teams →</a>
+        </div>
+      </li>
+    </ol>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
